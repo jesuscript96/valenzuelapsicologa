@@ -35,9 +35,9 @@ Las fuentes (Newsreader y Hanken Grotesk) se sirven desde la propia web mediante
 
 Los datos aún por confirmar se marcan en el código con `<span class="pend">…</span>`.
 
-## Formulario de contacto
+## Contacto
 
-Por ahora no envía nada: valida los campos y muestra un aviso. El script está al final de `src/pages/contacto.astro`.
+De momento el contacto es solo por WhatsApp (+34 691 52 63 73). El número está en `src/data/site.ts`. En `/contacto`, el nombre y el mensaje que escribe la persona se añaden al enlace de WhatsApp. No se envía ni se guarda nada desde la web.
 
 ## Despliegue en Vercel
 
