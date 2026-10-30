@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import PracticalInfo from '../components/PracticalInfo.astro';
+---
+<Base page="contacto" title="Contacto y primera cita" description="Solicita una primera cita. No necesitas tener completamente claro qué te ocurre para pedir ayuda.">
+
+  <PageHero
+    eyebrow="Contacto y primera cita"
+    title="Empezar terapia"
+    art={{ seed: 97, rings: 16, r0: 40, step: 22, amp: 0.07, solid: 6, dash: 5, dot: true }}
+  />
+
+  <div class="band">
+    <div class="wrap contact">
+
+      <div class="c-intro prose">
+        <p class="lead">No necesitas tener completamente claro qué te ocurre para pedir ayuda.</p>
+        <p>En la primera sesión dedicaré tiempo a conocer tu situación, comprender qué te ha llevado a consultar y explorar cuáles son tus principales dificultades y necesidades.</p>
+        <p>También será un espacio para resolver dudas sobre el proceso terapéutico y valorar cómo podemos trabajar.</p>
+      </div>
+
+      <div class="c-form panel">
+        <h2 style="font-size:clamp(1.5rem,1.2rem + 1vw,2rem)">Solicitar primera cita</h2>
+        <form class="form" id="cita-form">
+          <div class="field">
+            <label for="f-nombre">Nombre</label>
+            <input type="text" id="f-nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-correo">Correo electrónico</label>
+            <input type="email" id="f-correo" name="correo" autocomplete="email" inputmode="email" required>
+          </div>
+          <div class="field">
+            <label for="f-tel">Teléfono <span class="opt">(opcional)</span></label>
+            <input type="tel" id="f-tel" name="telefono" autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="field">
+            <label for="f-msg">¿Qué te gustaría contarme? <span class="opt">(opcional)</span></label>
+            <textarea id="f-msg" name="mensaje" placeholder="No hace falta que lo tengas claro."></textarea>
+          </div>
+          <label class="check" for="f-priv">
+            <input type="checkbox" id="f-priv" name="privacidad" required>
+            <span>He leído la política de privacidad <span class="pend">pendiente de redactar</span></span>
+          </label>
+          <button class="btn btn--block" type="submit">Enviar solicitud</button>
+          <p class="form-msg" id="cita-msg" role="status" hidden></p>
+        </form>
+      </div>
+
+      <div class="c-info">
+        <PracticalInfo />
+      </div>
+
+    </div>
+  </div>
+
+</Base>
+
+<script>
+  // Sending is not wired up yet: the form validates and shows a notice, nothing leaves the browser.
+  const form = document.getElementById('cita-form') as HTMLFormElement | null;
+  const msg = document.getElementById('cita-msg');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!msg) return;
+    msg.hidden = false;
+    msg.textContent = 'El envío del formulario todavía no está activo: tu solicitud no se ha enviado. Pronto podrás escribir a María desde aquí.';
+  });
+</script>

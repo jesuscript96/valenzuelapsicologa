@@ -1,0 +1,21 @@
+---
+import { rings, flow, type RingsOptions } from '../lib/contours';
+
+interface Props extends RingsOptions {
+  kind?: 'rings' | 'flow';
+  width?: number;
+  height?: number;
+  lines?: number;
+  dot?: boolean;
+  class?: string;
+  style?: string;
+  preserveAspectRatio?: string;
+}
+
+const { kind = 'rings', width = 800, height = 800, lines, dot = false, class: cls, style, preserveAspectRatio, ...opts } = Astro.props;
+const paths = kind === 'flow' ? flow({ seed: opts.seed, lines, width, height }) : rings(opts);
+---
+<svg class:list={['art', cls]} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio={preserveAspectRatio} style={style} aria-hidden="true">
+  {paths.map((p) => <path d={p.d} class={p.cls} />)}
+  {dot && <circle cx={opts.cx || 400} cy={opts.cy || 400} r="5" class="dot" />}
+</svg>

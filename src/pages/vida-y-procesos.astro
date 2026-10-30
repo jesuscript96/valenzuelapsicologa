@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import photo from '../assets/vida-y-procesos.jpg';
+---
+<Base page="vida-y-procesos" title="Vida y procesos de cambio" description="Identidad, decisiones, incertidumbre, pérdidas y sentido vital. Un espacio para comprender los conflictos que aparecen al construir nuestra propia vida.">
+
+  <PageHero
+    eyebrow="Áreas de trabajo · Vida y procesos de cambio"
+    title="A veces, lo difícil no es saber qué nos ocurre, sino saber qué hacer con nuestra vida."
+    art={{ kind: 'flow', width: 800, height: 400, seed: 9, lines: 24 }}
+  />
+
+  <div class="band">
+    <div class="wrap intro-photo">
+      <div class="prose">
+        <p class="lead">Hay momentos en los que, aparentemente, todo está bien y, sin embargo, sentimos que algo no encaja.</p>
+        <p>Podemos tener estabilidad, relaciones, trabajo y proyectos, pero experimentar una sensación de vacío o desconexión con la vida que llevamos.</p>
+        <p>Otras veces, el malestar aparece ante una decisión importante, una pérdida, un cambio inesperado o la incertidumbre sobre el futuro.</p>
+        <p>No todas las dificultades psicológicas se presentan como síntomas claramente identificables. Algunas surgen cuando nos preguntamos quiénes somos, qué queremos o cómo deseamos vivir.</p>
+      </div>
+      <figure class="photo"><Image src={photo} alt="Pasillo de arcos con luz natural y sombras suaves" widths={[480, 736]} sizes="(min-width: 900px) 440px, (min-width: 500px) 460px, 92vw" style="object-position:50% 58%" /></figure>
+    </div>
+  </div>
+
+  <div class="band band--alt">
+    <div class="wrap split">
+      <div class="side">
+        <h2>Las preguntas que también forman parte de la vida</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">La incertidumbre, la libertad de elegir, las pérdidas, el paso del tiempo y la búsqueda de sentido forman parte de nuestra vida.</p>
+        <p>No siempre podemos resolver estas cuestiones encontrando una respuesta definitiva o intentando eliminar las emociones que nos generan.</p>
+        <p>En ocasiones, el trabajo psicológico consiste en comprender cómo nos afectan, explorar los conflictos que despiertan y encontrar nuestra propia manera de afrontarlas y tomar decisiones.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="sec-head"><h2>¿Qué podemos trabajar en terapia?</h2></div>
+      <div class="items">
+
+        <article class="item">
+          <h3>Identidad y sentido vital</h3>
+          <p>Hay momentos en los que dejamos de tener claro quiénes somos, qué queremos o hacia dónde queremos dirigir nuestra vida.</p>
+          <p>A veces descubrimos que hemos tomado decisiones siguiendo las expectativas de los demás y empezamos a preguntarnos si la vida que hemos construido realmente nos representa.</p>
+          <p>En terapia podemos explorar tus necesidades, valores y deseos, comprender los conflictos que aparecen y trabajar para construir una vida más coherente con aquello que es importante para ti.</p>
+        </article>
+
+        <article class="item">
+          <h3>Decisiones e incertidumbre</h3>
+          <p>Tomar decisiones implica aceptar que no podemos conocer todas las consecuencias y que elegir un camino supone renunciar a otros.</p>
+          <p>El miedo a equivocarnos puede llevarnos a posponer decisiones, buscar constantemente seguridad o depender de la aprobación de los demás.</p>
+          <p>En terapia podemos trabajar estos miedos, comprender qué dificulta la elección y desarrollar una mayor capacidad para decidir, incluso cuando no tenemos todas las certezas.</p>
+        </article>
+
+        <article class="item">
+          <h3>Pérdidas y cambios vitales</h3>
+          <p class="emph">No todas las pérdidas implican una muerte.</p>
+          <p>Una separación, una enfermedad, un cambio de etapa o la renuncia a un proyecto importante pueden obligarnos a despedirnos de una vida que habíamos imaginado.</p>
+          <p>Estas experiencias pueden afectar a nuestra identidad, a nuestras expectativas y a la manera en que vemos el futuro.</p>
+          <p>En terapia podemos elaborar lo perdido, trabajar las emociones que aparecen y encontrar nuevas formas de continuar.</p>
+        </article>
+
+        <article class="item">
+          <h3>Vacío, insatisfacción y desconexión</h3>
+          <p>A veces no existe una crisis evidente. Tenemos estabilidad, cumplimos con nuestras responsabilidades y, sin embargo, sentimos que algo falta.</p>
+          <p>Podemos vivir en automático, siguiendo una dirección que ya no nos representa, sin saber exactamente qué necesitamos cambiar.</p>
+          <p>En terapia podemos explorar qué hay detrás de esa insatisfacción, identificar necesidades que quizá hemos dejado de atender y trabajar para recuperar una mayor conexión con nuestra propia vida.</p>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--alt">
+    <div class="wrap split">
+      <div class="side">
+        <h2>No se trata de encontrar la vida perfecta</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">No pretendo ofrecer respuestas universales sobre cómo debemos vivir.</p>
+        <p>Mi trabajo consiste en ayudarte a comprender qué está ocurriendo, reconocer los conflictos que te limitan y encontrar formas de actuar más coherentes con aquello que consideras importante.</p>
+        <p>En ocasiones eso implicará realizar cambios concretos. En otras, elaborar una pérdida, aceptar una limitación o aprender a convivir con preguntas que no tienen una respuesta definitiva.</p>
+      </div>
+    </div>
+  </div>
+
+  <CtaBand
+    seed={37}
+    lead="Pedir ayuda no exige tener completamente claro qué te ocurre ni saber explicar exactamente qué necesitas."
+    link={{ href: '/cuerpo-y-salud', label: 'Cuerpo y salud' }}
+  />
+
+</Base>

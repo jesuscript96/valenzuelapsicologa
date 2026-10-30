@@ -1,0 +1,38 @@
+---
+import BrandMark from './BrandMark.astro';
+import { FOOTER_PAGES } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <BrandMark />
+        <p class="soft foot-claim">Atención psicológica de enfoque integrador para personas adultas.</p>
+      </div>
+      <nav aria-label="Páginas">
+        <p class="eyebrow">Páginas</p>
+        <ul>
+          {FOOTER_PAGES.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+        </ul>
+      </nav>
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <ul>
+          <li>Correo <span class="pend">pendiente</span></li>
+          <li>Dirección <span class="pend">pendiente</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="safety"><b>Este espacio no atiende urgencias.</b> Si estás en una situación de riesgo, llama al 112. Si estás pensando en hacerte daño, puedes llamar al 024, la línea de atención a la conducta suicida, gratuita y disponible las 24 horas.</p>
+    <div class="legal">
+      <span>© {year} María Valenzuela</span>
+      {/* Legal pages are still to be written; they point to the review list until then. */}
+      <a href="/pendientes">Aviso legal</a>
+      <a href="/pendientes">Privacidad</a>
+      <a href="/pendientes">Cookies</a>
+      <span class="pend">Nombre comercial pendiente</span>
+    </div>
+  </div>
+</footer>

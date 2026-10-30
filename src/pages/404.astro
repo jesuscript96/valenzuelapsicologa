@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+---
+<Base page="404" title="Página no encontrada" description="La página que buscas no existe.">
+  <PageHero
+    eyebrow="Error 404"
+    title="No encontramos esta página."
+    art={{ seed: 5, rings: 14, r0: 40, step: 24, amp: 0.07, solid: 5, dash: 5 }}
+  />
+  <div class="band">
+    <div class="wrap prose">
+      <p class="lead">Puede que la dirección haya cambiado o que el enlace no sea correcto.</p>
+      <div class="actions">
+        <a class="btn" href="/">Volver al inicio</a>
+        <a class="link-arrow" href="/contacto">Contacto <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</Base>

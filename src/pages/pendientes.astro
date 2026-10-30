@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { DRAFT } from '../data/site';
+
+// Review-only page: once the site goes live it just sends visitors home.
+if (!DRAFT) return Astro.redirect('/');
+
+const items = [
+  { id: 't1', text: 'Nombre definitivo e identidad visual.', note: 'Se ve en la cabecera y el pie de todas las páginas.' },
+  { id: 't2', text: 'Fotografía profesional.', note: 'Se ve en <a href="/">Inicio</a> y <a href="/sobre-mi">Sobre mí</a>.' },
+  { id: 't3', text: 'Titulación exacta, número de colegiación y datos profesionales.', note: 'Se ve en <a href="/sobre-mi">Sobre mí</a>.' },
+  { id: 't4', text: 'Confirmación de la formación EMDR y su denominación acreditable.', note: 'Se ve en <a href="/como-trabajo">Mi forma de trabajar</a>, <a href="/sobre-mi">Sobre mí</a> y <a href="/">Inicio</a>.' },
+  { id: 't5', text: 'Modalidad de atención, dirección, duración y precio de las sesiones.', note: 'Se ve en <a href="/">Inicio</a> y <a href="/contacto">Contacto</a>.' },
+  { id: 't6', text: 'Correo profesional y sistema de reserva.', note: 'Se ve en <a href="/contacto">Contacto</a> y en el pie de página.' },
+  { id: 't7', text: 'Aviso legal, política de privacidad y cookies.', note: 'Se ve en el pie de página y en el formulario de contacto.' },
+  { id: 't8', text: 'Revisión final de los servicios anunciados para que se correspondan con la formación y competencias profesionales.', note: 'Afecta a todas las páginas.' },
+  { id: 't9', text: 'Aviso de urgencias del pie de página (112 y 024).', note: 'Añadido al preparar este borrador; no estaba en el documento de contenidos. Confirmar el texto.' },
+  { id: 't10', text: 'Confirmar las dos fotografías editoriales.', note: 'Son provisionales y las elige María. Se ven en <a href="/cuerpo-y-salud">Cuerpo y salud</a> (fragmento del cuerpo) y en <a href="/vida-y-procesos">Vida y procesos de cambio</a> (arquitectura y luz natural).' },
+  { id: 't12', text: 'Revisar «Pedir cita» (página de contacto), los datos profesionales y los materiales gráficos.', note: 'Según el documento del 30 de octubre, es lo que queda por revisar. Las secciones sin cambios indicados siguen con el texto original.' },
+  { id: 't13', text: 'Conectar el envío del formulario de contacto.', note: 'Ahora el formulario de <a href="/contacto">Contacto</a> valida los datos pero no envía nada.' },
+];
+---
+<Base page="pendientes" title="Pendientes" description="Lista de revisión del borrador.">
+
+  <PageHero
+    eyebrow="Solo para revisar el borrador"
+    title="Pendientes antes de publicar"
+    art={{ seed: 29, rings: 14, r0: 40, step: 24, amp: 0.07, solid: 14, dash: 0 }}
+  />
+
+  <div class="band">
+    <div class="wrap split">
+      <div class="side">
+        <h2>Datos y revisión final</h2>
+        <p class="soft">Esta página sirve para repasar el borrador con María. No formará parte de la web publicada. Puedes ir marcando lo que ya está resuelto.</p>
+      </div>
+      <ul class="todo">
+        {items.map((it) => (
+          <li><label><input type="checkbox" id={it.id} /><span>{it.text}<small set:html={it.note} /></span></label></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+</Base>
+
+<script>
+  // Ticks are remembered in this browser only.
+  const KEY = 'mv-pendientes';
+  let saved: Record<string, boolean> = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch { saved = {}; }
+  document.querySelectorAll<HTMLInputElement>('.todo input').forEach((cb) => {
+    cb.checked = !!saved[cb.id];
+    cb.addEventListener('change', () => {
+      saved[cb.id] = cb.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch {}
+    });
+  });
+</script>

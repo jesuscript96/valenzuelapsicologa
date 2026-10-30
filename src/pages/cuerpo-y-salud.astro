@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import photo from '../assets/cuerpo-y-salud.jpg';
+---
+<Base page="cuerpo-y-salud" title="Cuerpo y salud" description="La relación entre los procesos psicológicos y la salud física: dolor persistente, problemas dermatológicos, síntomas físicos y adaptación a la enfermedad.">
+
+  <PageHero
+    eyebrow="Áreas de trabajo · Cuerpo y salud"
+    title="Cuando el cuerpo cambia, también puede cambiar nuestra manera de vivir."
+    art={{ seed: 23, rings: 16, r0: 40, step: 22, amp: 0.07, solid: 6, dash: 5 }}
+  />
+
+  <div class="band">
+    <div class="wrap intro-photo">
+      <div class="prose">
+        <p class="lead">El cuerpo no es algo que simplemente tenemos. Es también la forma en la que experimentamos el mundo, nos relacionamos con los demás y desarrollamos nuestra vida cotidiana.</p>
+        <p>Cuando aparece una enfermedad, un dolor persistente, un problema dermatológico o síntomas físicos difíciles de comprender, nuestra relación con el cuerpo puede transformarse.</p>
+        <p>Podemos empezar a prestar más atención a nuestras sensaciones, anticipar molestias o modificar nuestra vida cotidiana para evitar aquello que tememos que pueda empeorarlas.</p>
+        <p class="emph">Y, en ocasiones, lo más difícil no es únicamente el síntoma, sino todo lo que empieza a cambiar a su alrededor.</p>
+        <p class="note-line">El trabajo psicológico no implica que los síntomas físicos sean imaginarios ni sustituye la atención médica necesaria.</p>
+      </div>
+      <figure class="photo"><Image src={photo} alt="Luz natural y sombras de hojas sobre la espalda de una persona" widths={[480, 736]} sizes="(min-width: 900px) 440px, (min-width: 500px) 460px, 92vw" /></figure>
+    </div>
+  </div>
+
+  <div class="band band--alt band--tight">
+    <div class="wrap split">
+      <div class="side">
+        <h2>La relación entre los procesos psicológicos y la salud física</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">Nuestra salud física y psicológica no funcionan como dos realidades completamente separadas.</p>
+        <p>El estrés, las emociones, la atención y nuestras conductas pueden influir en cómo experimentamos determinados síntomas y en la manera en que respondemos a ellos.</p>
+        <p>A su vez, convivir con una enfermedad o con síntomas físicos persistentes puede afectar a nuestro bienestar emocional, nuestras relaciones y nuestra vida cotidiana.</p>
+        <p>Reconocer esta relación no significa que los síntomas tengan necesariamente un origen psicológico, ni que puedan resolverse simplemente cambiando nuestra forma de pensar.</p>
+        <p>Significa que, junto a la atención médica, la psicología puede ofrecer herramientas para abordar el malestar y mejorar la calidad de vida.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="sec-head"><h2>Ámbitos de intervención</h2></div>
+      <div class="items">
+
+        <article class="item">
+          <h3>Piel y bienestar psicológico</h3>
+          <p>Los problemas dermatológicos, como la psoriasis, la dermatitis o el eccema, pueden afectar mucho más allá de la piel.</p>
+          <p>El picor, las molestias, la preocupación por la apariencia o el miedo a la mirada de los demás pueden influir en el bienestar emocional y en la vida cotidiana.</p>
+          <p>Desde la psicología puedo ayudarte a abordar estas dificultades y trabajar procesos como el estrés, la evitación social o los ciclos de picor y rascado cuando están presentes.</p>
+          <p class="note-line">Este ámbito de trabajo se relaciona con la psicodermatología, que estudia la interacción entre los procesos psicológicos y las enfermedades de la piel.</p>
+        </article>
+
+        <article class="item">
+          <h3>Dolor persistente</h3>
+          <p>Cuando el dolor se mantiene en el tiempo, puede afectar al descanso, las actividades, las relaciones y la confianza en nuestras propias capacidades.</p>
+          <p>A veces, el miedo a empeorar nos lleva a evitar actividades importantes. Otras veces, intentamos mantener el mismo ritmo de siempre, aunque termine agotándonos.</p>
+          <p>En terapia podemos trabajar la relación con el dolor, desarrollar estrategias de afrontamiento y recuperar actividades significativas, respetando las necesidades y limitaciones de cada persona.</p>
+        </article>
+
+        <article class="item">
+          <h3>Síntomas físicos persistentes</h3>
+          <p>Mareos, molestias digestivas, fatiga u otras sensaciones físicas pueden generar preocupación, incertidumbre y limitaciones en la vida cotidiana.</p>
+          <p>En algunos casos existe una enfermedad identificada; en otros, los síntomas no tienen una explicación completamente establecida. En ambos casos, el sufrimiento es real.</p>
+          <p>Mi trabajo se centra en comprender cómo afectan estos síntomas a la persona, abordar su impacto emocional y trabajar los procesos psicológicos que puedan estar contribuyendo al malestar, junto con la atención médica necesaria.</p>
+        </article>
+
+        <article class="item">
+          <h3>Enfermedad y adaptación a los cambios</h3>
+          <p>Recibir un diagnóstico, convivir con una enfermedad crónica o experimentar cambios en el funcionamiento del cuerpo puede transformar muchos aspectos de nuestra vida.</p>
+          <p>Pueden aparecer miedo, tristeza, rabia, incertidumbre o la sensación de haber perdido una parte de quienes éramos.</p>
+          <p>La terapia ofrece un espacio para elaborar estas experiencias, adaptarse a los cambios y encontrar formas de seguir construyendo una vida significativa.</p>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--alt band--tight">
+    <div class="wrap split">
+      <div class="side">
+        <h2>No se trata de elegir entre el cuerpo y la mente</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">El objetivo no es encontrar una explicación psicológica para todo lo que ocurre en el cuerpo, sino comprender cómo afecta a nuestra vida y qué podemos hacer al respecto.</p>
+        <p>En terapia podemos trabajar el impacto emocional de los síntomas, las dificultades que aparecen en el día a día y aquellos patrones que, en ocasiones, contribuyen a mantener el malestar.</p>
+        <p>También hay situaciones que no podemos modificar por completo. En esos casos, el trabajo consiste en encontrar formas de adaptarnos, recuperar espacios importantes de nuestra vida y construir una relación diferente con aquello que estamos viviendo.</p>
+      </div>
+    </div>
+  </div>
+
+  <CtaBand
+    seed={31}
+    eyebrow=""
+    title="¿Te reconoces en alguna de estas situaciones?"
+    lead="Si una enfermedad, el dolor o determinados síntomas físicos están afectando a tu bienestar emocional o a tu vida cotidiana, podemos trabajar para comprender lo que estás viviendo y encontrar formas de afrontarlo."
+    link={{ href: '/vida-y-procesos', label: 'Vida y procesos de cambio' }}
+  />
+
+</Base>

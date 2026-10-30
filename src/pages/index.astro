@@ -1,0 +1,136 @@
+---
+import Base from '../layouts/Base.astro';
+import ContourArt from '../components/ContourArt.astro';
+import PracticalInfo from '../components/PracticalInfo.astro';
+import Portrait from '../components/Portrait.astro';
+---
+<Base page="inicio" description="Psicología de enfoque integrador para personas adultas. Comprender lo que nos ocurre y transformar nuestra manera de vivirlo.">
+
+  <div class="band band--dark hero">
+    <ContourArt seed={11} rings={18} r0={44} step={23} amp={0.06} solid={7} dash={5} dot />
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Psicología de enfoque integrador</p>
+        <h1>Comprender lo que nos ocurre. <span class="it">Transformar nuestra manera de vivirlo.</span></h1>
+        <p class="lead">La psicología puede ayudarnos a comprender lo que nos ocurre, identificar aquello que mantiene nuestro sufrimiento y encontrar nuevas formas de responder a lo que vivimos.</p>
+        <div class="actions">
+          <a class="btn" href="/contacto">Solicitar primera cita</a>
+          <a class="link-arrow" href="/como-trabajo">Cómo trabajo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <dl class="hero-facts">
+        <div><dt>Enfoque</dt><dd>Psicología integradora</dd></div>
+        <div><dt>Atención</dt><dd>Personas adultas</dd></div>
+        <div><dt>Primera sesión</dt><dd>Un espacio para conocer tu situación</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <p class="lead big">El malestar puede manifestarse de muchas formas: ansiedad, dificultades emocionales, conflictos en nuestras relaciones o experiencias del pasado que siguen afectándonos. También puede aparecer en nuestra relación con el cuerpo, la enfermedad o las decisiones que tomamos. Y, a veces, surge como una sensación difícil de explicar: la de estar viviendo una vida que no terminamos de sentir propia.</p>
+      <div class="orient">
+        <p>No se trata de aceptar todo sin más, ni de intentar controlar absolutamente todo. Se trata de distinguir qué podemos transformar, qué necesitamos elaborar y cómo queremos vivir con aquello que no podemos cambiar.</p>
+        <ul class="grammar" aria-label="Tres maneras de relacionarnos con lo que nos ocurre">
+          <li><svg viewBox="0 0 46 46" aria-hidden="true"><circle class="ring" cx="23" cy="23" r="17"/></svg>Transformar</li>
+          <li><svg viewBox="0 0 46 46" aria-hidden="true"><circle class="ring ring--dash" cx="23" cy="23" r="17"/></svg>Elaborar</li>
+          <li><svg viewBox="0 0 46 46" aria-hidden="true"><circle class="ring ring--dot" cx="23" cy="23" r="17"/></svg>Aprender a convivir</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--alt">
+    <div class="wrap split">
+      <div class="side">
+        <p class="eyebrow">Enfoque integrador</p>
+        <h2>Una mirada a la persona en su conjunto</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">Mi forma de entender la psicología parte de una idea: no podemos separar completamente lo que pensamos, lo que sentimos, lo que ocurre en nuestro cuerpo y las circunstancias en las que vivimos.</p>
+        <p>Por eso trabajo desde una perspectiva integradora, combinando diferentes herramientas terapéuticas según las necesidades de cada persona.</p>
+        <p>Mi objetivo es comprender qué está contribuyendo al malestar, trabajar con las emociones y facilitar cambios que tengan sentido en la vida cotidiana.</p>
+        <p class="more"><a class="link-arrow" href="/como-trabajo">Cómo trabajo <span aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="sec-head"><h2>Áreas de trabajo</h2></div>
+      <div class="areas">
+
+        <article class="area">
+          <div class="pic"><ContourArt width={640} height={320} preserveAspectRatio="xMidYMid slice" seed={23} rings={11} r0={16} step={15} amp={0.08} solid={5} dash={3} cx={330} cy={160} /></div>
+          <div class="body">
+            <h3>Cuerpo y salud</h3>
+            <p class="sub">Cuando lo que ocurre en el cuerpo también afecta a nuestra forma de vivir.</p>
+            <p>La relación entre los procesos psicológicos y la salud física. Dolor persistente, problemas dermatológicos, síntomas físicos y adaptación a la enfermedad.</p>
+            <p class="go"><a class="link-arrow" href="/cuerpo-y-salud">Conocer esta área <span aria-hidden="true">→</span></a></p>
+          </div>
+        </article>
+
+        <article class="area">
+          <div class="pic"><ContourArt kind="flow" width={640} height={320} preserveAspectRatio="xMidYMid slice" seed={7} lines={17} /></div>
+          <div class="body">
+            <h3>Vida y procesos de cambio</h3>
+            <p class="sub">No siempre hace falta que algo vaya mal para sentir que algo no encaja.</p>
+            <p>Identidad, decisiones, incertidumbre, pérdidas y sentido vital. Un espacio para comprender los conflictos que aparecen al construir nuestra propia vida.</p>
+            <p class="go"><a class="link-arrow" href="/vida-y-procesos">Conocer esta área <span aria-hidden="true">→</span></a></p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--dark">
+    <ContourArt style="left:-26%;bottom:-62%;width:min(780px,95vw);height:auto" seed={41} rings={16} r0={30} step={22} amp={0.07} solid={3} dash={4} />
+    <div class="wrap split">
+      <div class="side">
+        <p class="eyebrow">Emociones y procesos psicológicos</p>
+        <h2>Lo que hacemos con lo que sentimos</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">A veces, los intentos de protegernos del malestar terminan convirtiéndose en parte del problema.</p>
+        <p>Evitar lo que sentimos, exigirnos demasiado o intentar tenerlo todo bajo control puede aliviarnos momentáneamente, pero también mantener nuestro sufrimiento.</p>
+        <p>En terapia exploramos estos patrones, comprendemos qué función cumplen y trabajamos para desarrollar otras formas de responder a nuestras emociones y experiencias.</p>
+        <p>En ocasiones, esto también implica trabajar con experiencias del pasado que continúan influyendo en cómo nos sentimos y actuamos en el presente.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--alt">
+    <div class="wrap me-grid">
+      <Portrait />
+      <div class="prose">
+        <p class="eyebrow eyebrow--gap">Sobre mí</p>
+        <h2 style="margin-bottom:26px">María Valenzuela</h2>
+        <p class="lead">Soy psicóloga de enfoque integrador y he creado este proyecto con la intención de ofrecer una atención psicológica que tenga en cuenta tanto las dificultades clínicas como las preguntas y experiencias que forman parte de la vida humana.</p>
+        <p>Mi trabajo combina una mirada clínica con el interés por los procesos emocionales, la relación entre cuerpo y salud y los conflictos existenciales.</p>
+        <p>Utilizo diferentes herramientas terapéuticas en función de las necesidades de cada persona, incorporando EMDR cuando está indicado y se dan las condiciones adecuadas para su aplicación.</p>
+        <p>Entiendo la terapia como un trabajo compartido en el que buscamos comprender lo que está ocurriendo, identificar qué necesita cambiar y construir formas de vivir más acordes con las necesidades y valores de cada persona.</p>
+        <p class="more"><a class="link-arrow" href="/sobre-mi">Conocerme mejor <span aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--dark">
+    <ContourArt class="cta-art" seed={19} rings={11} r0={40} step={24} amp={0.07} solid={4} dash={4} />
+    <div class="wrap split">
+      <div class="side">
+        <p class="eyebrow">Primera cita</p>
+        <h2>Empezar terapia</h2>
+        <div class="prose" style="margin-top:12px">
+          <p>Pedir ayuda no exige tener completamente claro qué te ocurre ni saber explicar exactamente qué necesitas.</p>
+          <p>La primera sesión es un espacio para conocer tu situación, explorar qué te ha llevado a consultar y valorar cómo podemos trabajar.</p>
+        </div>
+        <div class="actions"><a class="btn" href="/contacto">Solicitar primera cita</a></div>
+      </div>
+      <div>
+        <PracticalInfo />
+      </div>
+    </div>
+  </div>
+
+</Base>

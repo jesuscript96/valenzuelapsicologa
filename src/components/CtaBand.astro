@@ -1,0 +1,28 @@
+---
+import ContourArt from './ContourArt.astro';
+
+interface Props {
+  seed: number;
+  eyebrow?: string;
+  title?: string;
+  lead: string;
+  link?: { href: string; label: string };
+}
+const { seed, eyebrow = 'Primera cita', title = 'Empezar terapia', lead, link } = Astro.props;
+---
+<div class="band band--dark">
+  <ContourArt class="cta-art" seed={seed} rings={11} r0={40} step={24} amp={0.07} solid={4} dash={4} />
+  <div class="wrap split">
+    <div class="side">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h2>{title}</h2>
+    </div>
+    <div class="prose">
+      <p class="lead">{lead}</p>
+      <div class="actions">
+        <a class="btn" href="/contacto">Solicitar primera cita</a>
+        {link && <a class="link-arrow" href={link.href}>{link.label} <span aria-hidden="true">→</span></a>}
+      </div>
+    </div>
+  </div>
+</div>

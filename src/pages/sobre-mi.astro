@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Portrait from '../components/Portrait.astro';
+---
+<Base page="sobre-mi" title="Sobre mí" description="María Valenzuela, psicóloga de enfoque integrador. Formación, orientación terapéutica y forma de entender la psicología.">
+
+  <PageHero
+    eyebrow="Sobre mí"
+    title="María Valenzuela · Psicóloga de enfoque integrador"
+    art={{ seed: 71, rings: 16, r0: 40, step: 22, amp: 0.07, solid: 6, dash: 5, dot: true }}
+  />
+
+  <div class="band">
+    <div class="wrap me-grid">
+      <Portrait />
+      <div class="prose">
+        <p class="lead">Soy María Valenzuela, psicóloga de enfoque integrador.</p>
+        <p>Entiendo la psicología como una disciplina que nos permite comprender el sufrimiento humano desde diferentes perspectivas. Por eso, mi manera de trabajar no se limita a una única corriente terapéutica, sino que busca adaptar la intervención a las necesidades de cada persona.</p>
+        <p>Me interesan especialmente dos ámbitos: la relación entre los procesos psicológicos y la salud física, y las dificultades que aparecen cuando nos enfrentamos a preguntas sobre nuestra identidad, nuestras decisiones o la dirección que queremos dar a nuestra vida.</p>
+        <p>En terapia considero importante comprender qué está ocurriendo, pero también trabajar con las emociones y encontrar formas de introducir cambios cuando son necesarios.</p>
+        <p>He creado este proyecto con la intención de ofrecer un espacio de atención psicológica riguroso, cercano y adaptado a cada persona, donde podamos abordar tanto dificultades clínicas como conflictos que forman parte de la experiencia humana.</p>
+        <div class="actions">
+          <a class="link-arrow" href="/cuerpo-y-salud">Cuerpo y salud <span aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="/vida-y-procesos">Vida y procesos de cambio <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--alt">
+    <div class="wrap split">
+      <div class="side">
+        <h2>Formación y orientación profesional</h2>
+      </div>
+      <div class="creds">
+        <section class="cred">
+          <h3>Formación académica</h3>
+          <ul class="rules">
+            <li>Titulación universitaria en Psicología <span class="pend">universidad y año · pendiente</span></li>
+            <li>Habilitación sanitaria o titulación correspondiente <span class="pend">pendiente de confirmar</span></li>
+            <li>Número de colegiación <span class="pend">pendiente</span></li>
+          </ul>
+        </section>
+        <section class="cred">
+          <h3>Formación complementaria</h3>
+          <ul class="rules">
+            <li>EMDR, nivel 1 <span class="pend">denominación exacta del curso y entidad formadora · pendiente de verificar</span></li>
+            <li>Otras formaciones acreditables <span class="pend">pendiente</span></li>
+          </ul>
+        </section>
+        <section class="cred">
+          <h3>Orientación terapéutica</h3>
+          <p>Enfoque integrador: adapto la intervención a las necesidades de cada persona, combinando diferentes perspectivas y herramientas terapéuticas. Trabajo con procesos emocionales, dificultades psicológicas y cuestiones relacionadas con cuerpo y salud.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <CtaBand
+    seed={83}
+    lead="Pedir ayuda no exige tener completamente claro qué te ocurre ni saber explicar exactamente qué necesitas."
+  />
+
+</Base>

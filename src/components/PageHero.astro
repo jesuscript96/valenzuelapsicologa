@@ -1,0 +1,18 @@
+---
+import type { ComponentProps } from 'astro/types';
+import ContourArt from './ContourArt.astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  art: ComponentProps<typeof ContourArt>;
+}
+const { eyebrow, title, art } = Astro.props;
+---
+<div class="band band--dark phero">
+  <ContourArt {...art} />
+  <div class="wrap">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+---
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/newsreader/opsz-italic.css';
+import '@fontsource-variable/hanken-grotesk/wght.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { DRAFT, SITE_NAME } from '../data/site';
+
+interface Props {
+  page: string;
+  title?: string;
+  description: string;
+}
+const { page, title, description } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {DRAFT && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#F4F6F4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0D1A1D" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body data-page={page}>
+    {DRAFT && (
+      <div class="top-note">
+        <div class="wrap">
+          <span>Borrador para revisar con María.</span>
+          <span>Lo que aparece así <span class="pend">pendiente</span> falta por confirmar.</span>
+          <a href="/pendientes">Ver lista de pendientes</a>
+        </div>
+      </div>
+    )}
+
+    <Header page={page} />
+
+    <main>
+      <slot />
+    </main>
+
+    <div class="dock"><a class="btn btn--block" href="/contacto">Solicitar primera cita</a></div>
+
+    <Footer />
+  </body>
+</html>

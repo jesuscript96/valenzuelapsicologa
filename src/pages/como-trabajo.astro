@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<Base page="como-trabajo" title="Cómo trabajo" description="Una forma de trabajar integradora: comprender lo que nos ocurre, trabajar con la experiencia emocional e introducir cambios en la vida cotidiana. EMDR cuando está indicado.">
+
+  <PageHero
+    eyebrow="Mi forma de trabajar"
+    title="Diferentes perspectivas, una atención adaptada a ti."
+    art={{ seed: 53, rings: 16, r0: 40, step: 22, amp: 0.07, solid: 6, dash: 5 }}
+  />
+
+  <div class="band">
+    <div class="wrap">
+      <div class="prose prose--wide">
+        <p class="lead">No todas las personas llegan a terapia por los mismos motivos, ni todas las dificultades pueden comprenderse desde una única perspectiva.</p>
+        <p>Por eso, mi trabajo parte de conocer a la persona, su situación actual, sus necesidades y los procesos que pueden estar contribuyendo a su malestar.</p>
+        <p>Mi forma de trabajar es integradora: utilizo diferentes perspectivas y herramientas terapéuticas según las necesidades de cada persona y las características de su situación.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--alt">
+    <div class="wrap split">
+      <div class="side">
+        <h2>Comprender, sentir y actuar</h2>
+        <p class="soft">Para mí, el trabajo terapéutico implica tres dimensiones que se complementan.</p>
+        <svg class="venn" viewBox="0 0 430 330" role="img" aria-label="Tres círculos que se solapan: comprender, sentir y actuar">
+          <circle cx="150" cy="120" r="100"/>
+          <circle cx="280" cy="120" r="100"/>
+          <circle cx="215" cy="205" r="100"/>
+          <text x="106" y="106" text-anchor="middle" style="font-size:19px">Comprender</text>
+          <text x="326" y="106" text-anchor="middle" style="font-size:19px">Sentir</text>
+          <text x="215" y="272" text-anchor="middle" style="font-size:19px">Actuar</text>
+        </svg>
+      </div>
+      <div class="dims">
+        <div>
+          <h3>Comprender lo que nos ocurre</h3>
+          <p>Explorar cómo se ha desarrollado una dificultad, qué factores intervienen y qué procesos pueden estar manteniéndola.</p>
+          <p>No se trata de buscar una única causa ni de reducir todo lo que nos sucede a nuestra historia personal.</p>
+        </div>
+        <div>
+          <h3>Trabajar con nuestra experiencia emocional</h3>
+          <p>Las emociones no son simplemente síntomas que debamos eliminar.</p>
+          <p>Las emociones pueden ayudarnos a reconocer nuestras necesidades, nuestros límites y nuestra manera de relacionarnos con nosotros mismos y con los demás.</p>
+          <p>En terapia podemos aprender a reconocerlas, comprenderlas y procesarlas, especialmente cuando aparecen patrones de evitación, autocrítica, vergüenza o culpa.</p>
+        </div>
+        <div>
+          <h3>Introducir cambios en nuestra vida</h3>
+          <p>Comprender lo que nos ocurre es importante, pero no siempre es suficiente.</p>
+          <p>La terapia también puede implicar modificar comportamientos, desarrollar recursos, afrontar situaciones evitadas, tomar decisiones o construir nuevas formas de relacionarnos.</p>
+          <p>El objetivo es que el trabajo realizado en sesión tenga sentido en la vida cotidiana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap split">
+      <div class="side">
+        <h2>EMDR y procesamiento de experiencias difíciles</h2>
+        <p><span class="pend">Pendiente: confirmar la formación EMDR y su denominación acreditable</span></p>
+      </div>
+      <div class="prose">
+        <p class="lead">Algunas experiencias pueden seguir generando malestar mucho tiempo después de haber ocurrido. En ocasiones, determinados recuerdos o situaciones actuales despiertan emociones y reacciones intensas que resultan difíciles de comprender o regular.</p>
+        <p>La terapia EMDR (Desensibilización y Reprocesamiento por Movimientos Oculares) es un abordaje psicoterapéutico utilizado especialmente en el tratamiento de experiencias traumáticas y sus consecuencias psicológicas.</p>
+        <p>Su objetivo es facilitar el procesamiento de experiencias que continúan asociadas a un malestar significativo.</p>
+        <p>En mi trabajo, valoro cuándo puede ser adecuado incorporar EMDR, teniendo en cuenta las necesidades de cada persona, su situación actual y los recursos de los que dispone. La evaluación y la preparación forman parte del proceso terapéutico.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band--alt">
+    <div class="wrap split">
+      <div class="side">
+        <h2>Una mirada clínica y existencial</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">Además de abordar los síntomas y las dificultades psicológicas, considero importante prestar atención a cómo vivimos determinadas experiencias y a las preguntas que pueden surgir en diferentes momentos de nuestra vida.</p>
+        <p>La incertidumbre, las decisiones, la identidad, las pérdidas y los límites de nuestro control pueden formar parte del malestar psicológico.</p>
+        <p>Incorporar esta mirada no significa que todas las sesiones deban centrarse en cuestiones filosóficas, sino reconocer su importancia cuando resultan relevantes para la persona.</p>
+      </div>
+    </div>
+  </div>
+
+  <CtaBand
+    seed={61}
+    lead="La primera sesión es un espacio para conocer tu situación, explorar qué te ha llevado a consultar y valorar cómo podemos trabajar."
+    link={{ href: '/sobre-mi', label: 'Conocerme mejor' }}
+  />
+
+</Base>
