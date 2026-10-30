@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import PracticalInfo from '../components/PracticalInfo.astro';
+import { WHATSAPP, whatsappUrl } from '../data/site';
 ---
 <Base page="contacto" title="Contacto y primera cita" description="Solicita una primera cita. No necesitas tener completamente claro qué te ocurre para pedir ayuda.">
 
@@ -22,29 +23,21 @@ import PracticalInfo from '../components/PracticalInfo.astro';
 
       <div class="c-form panel">
         <h2 style="font-size:clamp(1.5rem,1.2rem + 1vw,2rem)">Solicitar primera cita</h2>
-        <form class="form" id="cita-form">
+        <p class="soft" style="margin-top:12px">Escríbeme por WhatsApp al <a href={whatsappUrl()} target="_blank" rel="noopener">{WHATSAPP.display}</a>. Si quieres, puedes preparar aquí el mensaje.</p>
+        <form class="form" id="wa-form">
           <div class="field">
-            <label for="f-nombre">Nombre</label>
-            <input type="text" id="f-nombre" name="nombre" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="f-correo">Correo electrónico</label>
-            <input type="email" id="f-correo" name="correo" autocomplete="email" inputmode="email" required>
-          </div>
-          <div class="field">
-            <label for="f-tel">Teléfono <span class="opt">(opcional)</span></label>
-            <input type="tel" id="f-tel" name="telefono" autocomplete="tel" inputmode="tel">
+            <label for="f-nombre">Nombre <span class="opt">(opcional)</span></label>
+            <input type="text" id="f-nombre" name="nombre" autocomplete="name">
           </div>
           <div class="field">
             <label for="f-msg">¿Qué te gustaría contarme? <span class="opt">(opcional)</span></label>
             <textarea id="f-msg" name="mensaje" placeholder="No hace falta que lo tengas claro."></textarea>
           </div>
-          <label class="check" for="f-priv">
-            <input type="checkbox" id="f-priv" name="privacidad" required>
-            <span>He leído la política de privacidad <span class="pend">pendiente de redactar</span></span>
-          </label>
-          <button class="btn btn--block" type="submit">Enviar solicitud</button>
-          <p class="form-msg" id="cita-msg" role="status" hidden></p>
+          <a class="btn btn--block" id="wa-link" href={whatsappUrl()} target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.6 18.6z"/></svg>
+            Escribir por WhatsApp
+          </a>
+          <p class="note-line">Se abrirá WhatsApp con tu mensaje para que lo revises y lo envíes. Esta web no guarda ningún dato.</p>
         </form>
       </div>
 
@@ -58,13 +51,25 @@ import PracticalInfo from '../components/PracticalInfo.astro';
 </Base>
 
 <script>
-  // Sending is not wired up yet: the form validates and shows a notice, nothing leaves the browser.
-  const form = document.getElementById('cita-form') as HTMLFormElement | null;
-  const msg = document.getElementById('cita-msg');
+  import { WHATSAPP_GREETING, whatsappUrl } from '../data/site';
+
+  // Keeps the WhatsApp link in sync with what the visitor writes. Without this script the link still opens WhatsApp with the default greeting.
+  const form = document.getElementById('wa-form') as HTMLFormElement | null;
+  const link = document.getElementById('wa-link') as HTMLAnchorElement | null;
+  const nombre = document.getElementById('f-nombre') as HTMLInputElement | null;
+  const mensaje = document.getElementById('f-msg') as HTMLTextAreaElement | null;
+
+  const compose = () => {
+    const name = nombre?.value.trim();
+    const msg = mensaje?.value.trim();
+    let text = name ? `Hola, María. Soy ${name} y me gustaría solicitar una primera cita.` : WHATSAPP_GREETING;
+    if (msg) text += `\n\n${msg}`;
+    return whatsappUrl(text);
+  };
+
+  form?.addEventListener('input', () => { if (link) link.href = compose(); });
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!msg) return;
-    msg.hidden = false;
-    msg.textContent = 'El envío del formulario todavía no está activo: tu solicitud no se ha enviado. Pronto podrás escribir a María desde aquí.';
+    window.open(compose(), '_blank', 'noopener');
   });
 </script>

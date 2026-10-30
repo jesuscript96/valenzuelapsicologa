@@ -4,6 +4,12 @@ export const DRAFT = true;
 
 export const SITE_NAME = 'María Valenzuela Psicología';
 
+// Contact goes through WhatsApp for now (no email yet).
+export const WHATSAPP = { number: '34691526373', display: '+34 691 52 63 73' };
+export const WHATSAPP_GREETING = 'Hola, María. Me gustaría solicitar una primera cita.';
+export const whatsappUrl = (text = WHATSAPP_GREETING) =>
+  `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(text)}`;
+
 export const NAV = [
   { slug: 'inicio', href: '/', label: 'Inicio' },
   { slug: 'cuerpo-y-salud', href: '/cuerpo-y-salud', label: 'Cuerpo y salud' },

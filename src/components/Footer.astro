@@ -1,6 +1,6 @@
 ---
 import BrandMark from './BrandMark.astro';
-import { FOOTER_PAGES } from '../data/site';
+import { FOOTER_PAGES, WHATSAPP, whatsappUrl } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
@@ -20,7 +20,7 @@ const year = new Date().getFullYear();
       <div>
         <p class="eyebrow">Contacto</p>
         <ul>
-          <li>Correo <span class="pend">pendiente</span></li>
+          <li>WhatsApp <a href={whatsappUrl()} target="_blank" rel="noopener">{WHATSAPP.display}</a></li>
           <li>Dirección <span class="pend">pendiente</span></li>
         </ul>
       </div>

@@ -1,4 +1,5 @@
 ---
+import { WHATSAPP, whatsappUrl } from '../data/site';
 ---
 <p class="eyebrow eyebrow--gap">Información práctica</p>
 <dl class="facts-list">
@@ -7,5 +8,5 @@
   <div><dt>Ubicación</dt><dd><span class="pend">Dirección de consulta · pendiente</span></dd></div>
   <div><dt>Duración</dt><dd><span class="pend">Pendiente de confirmar</span></dd></div>
   <div><dt>Precio</dt><dd><span class="pend">Pendiente de confirmar</span></dd></div>
-  <div><dt>Contacto</dt><dd><span class="pend">Correo, formulario o reservas · pendiente</span></dd></div>
+  <div><dt>Contacto</dt><dd>WhatsApp <a href={whatsappUrl()} target="_blank" rel="noopener">{WHATSAPP.display}</a></dd></div>
 </dl>
