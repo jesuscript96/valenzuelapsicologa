@@ -1,5 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import photo from '../assets/maria-valenzuela.jpg';
 ---
-<div class="portrait" role="img" aria-label="Espacio reservado para la fotografía profesional de María">
-  <span class="pend">Fotografía profesional de María · pendiente de seleccionar</span>
-</div>
+<figure class="portrait">
+  <Image
+    src={photo}
+    alt="María Valenzuela, psicóloga, sonriendo con la mano apoyada junto a la cara"
+    widths={[340, 480, 760]}
+    sizes="(min-width: 900px) 380px, 340px"
+    style="object-position:50% 30%"
+  />
+</figure>
