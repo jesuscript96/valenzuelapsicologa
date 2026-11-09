@@ -211,7 +211,8 @@ h3{font-size:clamp(1.3rem,1.1rem + .7vw,1.65rem);font-weight:400;line-height:1.2
 .facts-list>div{display:grid;grid-template-columns:minmax(0,9.5rem) minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line)}
 .facts-list>div:last-child{border-bottom:1px solid var(--line)}
 .facts-list dt{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding-top:.35em}
-.facts-list dd{margin:0}
+.facts-list dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.site-footer li{overflow-wrap:anywhere}
 .band--dark .facts-list>div{border-color:var(--band-line)}
 .band--dark .facts-list dt{color:var(--on-band-soft)}
 .rules li{padding:16px 0;border-top:1px solid var(--line)}

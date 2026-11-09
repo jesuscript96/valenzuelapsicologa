@@ -4,7 +4,9 @@ export const DRAFT = true;
 
 export const SITE_NAME = 'María Valenzuela Psicología';
 
-// Contact goes through WhatsApp for now (no email yet).
+// Appointments go through WhatsApp; the email and address are shown as information.
+export const EMAIL = 'psicologiamariavalenzuela@gmail.com';
+export const ADDRESS = 'Calle Pérez Bayer 11';
 export const WHATSAPP = { number: '34691526373', display: '+34 691 52 63 73' };
 export const WHATSAPP_GREETING = 'Hola, María. Me gustaría solicitar una primera cita.';
 export const whatsappUrl = (text = WHATSAPP_GREETING) =>
