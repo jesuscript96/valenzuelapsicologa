@@ -11,12 +11,16 @@ interface Props {
   page: string;
   title?: string;
   description: string;
+  /** Keep this page out of search results (e.g. the 404). */
+  noindex?: boolean;
 }
-const { page, title, description } = Astro.props;
+const { page, title, description, noindex = false } = Astro.props;
 const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
 // The build writes /sobre-mi.html, but Vercel serves it as /sobre-mi (cleanUrls).
 const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/');
 const canonical = Astro.site ? new URL(cleanPath, Astro.site).href : undefined;
+// Preview image for shared links: public/compartir.jpg, a landscape crop of María's portrait.
+const shareUrl = Astro.site ? new URL('/compartir.jpg', Astro.site).href : '/compartir.jpg';
 ---
 <!doctype html>
 <html lang="es">
@@ -25,13 +29,20 @@ const canonical = Astro.site ? new URL(cleanPath, Astro.site).href : undefined;
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    {DRAFT && <meta name="robots" content="noindex, nofollow" />}
+    {(DRAFT || noindex) && <meta name="robots" content="noindex, nofollow" />}
     <meta name="google-site-verification" content="BcRhHjMjkRNNkGJDKqmiVJcKjjeRc-kHOBWmHkWDfac" />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={shareUrl} />
+    <meta property="og:image:width" content="1086" />
+    <meta property="og:image:height" content="568" />
+    <meta property="og:image:alt" content="María Valenzuela, psicóloga" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#F4F6F4" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0D1A1D" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

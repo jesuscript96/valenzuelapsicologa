@@ -271,6 +271,8 @@ input:focus,textarea:focus{outline:2px solid var(--brand);outline-offset:1px;bor
 .site-footer li a{color:var(--ink);text-underline-offset:3px}
 .legal{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:.88rem;color:var(--ink-soft);align-items:center}
 .legal a{color:var(--ink-soft);text-underline-offset:3px}
+.legal-doc h2{font-size:clamp(1.35rem,1.15rem + .8vw,1.75rem);margin:2.2em 0 .7em}
+.legal-doc .facts-list{margin-top:.4em}
 .site-footer .safety{margin-top:36px;border-top:0;padding-top:0}
 
 /* motion */

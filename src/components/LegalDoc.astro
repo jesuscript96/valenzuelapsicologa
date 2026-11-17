@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from './PageHero.astro';
+import { LEGAL } from '../data/site';
+
+interface Props {
+  page: string;
+  title: string;
+  description: string;
+  seed: number;
+}
+const { page, title, description, seed } = Astro.props;
+---
+<Base page={page} title={title} description={description}>
+  <PageHero
+    eyebrow="Información legal"
+    title={title}
+    art={{ seed, rings: 14, r0: 40, step: 24, amp: 0.07, solid: 5, dash: 5 }}
+  />
+  <div class="band">
+    <div class="wrap">
+      <div class="prose prose--wide legal-doc">
+        <slot />
+        <p class="note-line">Última actualización: {LEGAL.updated}.</p>
+      </div>
+    </div>
+  </div>
+</Base>

@@ -1,8 +1,27 @@
 // While DRAFT is true the site publishes /pendientes (not linked from anywhere)
 // and asks search engines not to index anything. Set it to false to go live.
-export const DRAFT = true;
+export const DRAFT = false;
 
 export const SITE_NAME = 'María Valenzuela Psicología';
+
+// Holder data for the legal notice. Lines whose value is empty are not shown;
+// fill fullName, nif and address as soon as María sends them (LSSI art. 10).
+export const LEGAL = {
+  name: 'María Valenzuela',
+  fullName: '',
+  nif: '',
+  address: '',
+  college: 'Colegio Oficial de la Psicología de la Comunitat Valenciana (COPCV)',
+  collegeNumber: 'CV19927',
+  degrees: 'Titulación universitaria en Psicología y Máster general sanitario',
+  updated: '17 de noviembre de 2026',
+};
+
+export const LEGAL_PAGES = [
+  { href: '/aviso-legal', label: 'Aviso legal' },
+  { href: '/privacidad', label: 'Privacidad' },
+  { href: '/cookies', label: 'Cookies' },
+];
 
 // Appointments go through WhatsApp; the email is shown as information. No address for now.
 export const EMAIL = 'psicologiamariavalenzuela@gmail.com';

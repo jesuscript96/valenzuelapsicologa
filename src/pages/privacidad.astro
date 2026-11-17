@@ -1,0 +1,34 @@
+---
+import LegalDoc from '../components/LegalDoc.astro';
+import { EMAIL, LEGAL } from '../data/site';
+---
+<LegalDoc page="privacidad" title="Política de privacidad" description="Cómo se tratan los datos personales que compartes al pedir cita." seed={23}>
+
+  <p class="lead">Esta web no tiene formularios que envíen datos ni guarda información de quien la visita. Los datos personales solo llegan cuando decides escribir por WhatsApp o por correo.</p>
+
+  <h2>Responsable del tratamiento</h2>
+  <p>{LEGAL.fullName || LEGAL.name}{LEGAL.nif && `, NIF ${LEGAL.nif}`}. Psicóloga colegiada n.º {LEGAL.collegeNumber}. Correo: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+
+  <h2>Qué datos se tratan</h2>
+  <p>Los que tú facilites al ponerte en contacto: tu nombre, tu número de teléfono o tu correo y lo que decidas contar en el mensaje. Ese mensaje puede incluir información sobre tu salud, que es una categoría especial de datos y se trata con especial cuidado.</p>
+  <p>El apartado «Solicitar primera cita» solo prepara un mensaje en tu propio dispositivo y abre WhatsApp para que lo revises y lo envíes tú. Esta web no recibe ni guarda lo que escribes.</p>
+  <p>No hace falta que des detalles de tu situación en el primer mensaje. Basta con indicar que quieres pedir cita.</p>
+
+  <h2>Para qué se usan</h2>
+  <p>Para responder a tu consulta, organizar la primera cita y, si decides empezar la terapia, prestarte la atención psicológica.</p>
+
+  <h2>Base legal</h2>
+  <p>Tu consentimiento al ponerte en contacto y, si inicias la terapia, la prestación del servicio que solicitas (artículo 6.1 a y b del Reglamento General de Protección de Datos). Los datos de salud se tratan con tu consentimiento explícito y para la asistencia sanitaria, bajo secreto profesional (artículo 9.2 a y h).</p>
+
+  <h2>Cuánto tiempo se conservan</h2>
+  <p>Los datos de contacto se conservan el tiempo necesario para atender tu solicitud. Si inicias la terapia, la documentación clínica se conserva durante los plazos que establece la normativa sanitaria.</p>
+
+  <h2>Con quién se comparten</h2>
+  <p>Tus datos no se ceden a terceros, salvo obligación legal. Para comunicarnos se usan WhatsApp (Meta) y el correo de Google, que tratan los mensajes según sus propias políticas y pueden hacerlo fuera del Espacio Económico Europeo con las garantías que exige la normativa europea.</p>
+  <p>La web está alojada en Vercel. Como cualquier servidor, registra datos técnicos de las visitas, como la dirección IP, para su funcionamiento y seguridad.</p>
+
+  <h2>Tus derechos</h2>
+  <p>Puedes pedir el acceso, la rectificación o la supresión de tus datos, oponerte a su tratamiento, solicitar su limitación o su portabilidad y retirar tu consentimiento en cualquier momento. Para ello, escribe a <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+  <p>Si consideras que no se han respetado tus derechos, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>).</p>
+
+</LegalDoc>

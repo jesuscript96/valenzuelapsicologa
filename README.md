@@ -17,7 +17,7 @@ npm run preview   # sirve dist/ en local
 
 ```
 src/
-  pages/        una página por ruta (/, /cuerpo-y-salud, /vida-y-procesos, /como-trabajo, /sobre-mi, /contacto, /pendientes)
+  pages/        una página por ruta (/, /cuerpo-y-salud, /vida-y-procesos, /como-trabajo, /sobre-mi, /contacto, /aviso-legal, /privacidad, /cookies, /pendientes)
   layouts/      Base.astro: <head>, cabecera, pie y barra de cita en móvil
   components/   piezas compartidas (cabecera, pie, banda de cita, cabecera de página, arte de contornos…)
   lib/          contours.ts: genera las líneas de contorno en tiempo de compilación
@@ -29,9 +29,11 @@ prototipo/      el prototipo HTML original, solo como referencia
 
 Las fuentes (Newsreader y Hanken Grotesk) se sirven desde la propia web mediante Fontsource, sin llamadas a Google Fonts.
 
-## Modo borrador
+## Publicación y modo borrador
 
-`DRAFT = true` en `src/data/site.ts` publica la lista `/pendientes` (sin enlaces desde la web) y pide a los buscadores que no indexen la web (`noindex` y `robots.txt`). Para publicar de verdad, ponlo a `false` y, cuando haya dominio, define `site` en `astro.config.mjs`.
+La web está publicada en https://www.valenzuelapsicologa.com y abierta a los buscadores (`DRAFT = false` en `src/data/site.ts`; `robots.txt` enlaza `/sitemap.xml`). Con `DRAFT = true` vuelve a pedir que no se indexe (`noindex` y `robots.txt`) y publica la lista `/pendientes`.
+
+Los datos del aviso legal están en `LEGAL`, en `src/data/site.ts`. Las líneas vacías (nombre completo, NIF, domicilio) no se muestran hasta rellenarlas.
 
 ## Contacto
 

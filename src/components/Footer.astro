@@ -1,6 +1,6 @@
 ---
 import BrandMark from './BrandMark.astro';
-import { EMAIL, FOOTER_PAGES, WHATSAPP, whatsappUrl } from '../data/site';
+import { EMAIL, FOOTER_PAGES, LEGAL_PAGES, WHATSAPP, whatsappUrl } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
     <p class="safety"><b>Este espacio no atiende urgencias.</b> Si estás en una situación de riesgo, llama al 112. Si estás pensando en hacerte daño, puedes llamar al 024, la línea de atención a la conducta suicida, gratuita y disponible las 24 horas.</p>
     <div class="legal">
       <span>© {year} María Valenzuela</span>
-      {/* Aviso legal, privacidad y cookies go here once they are written (see /pendientes). */}
+      {LEGAL_PAGES.map((p) => <a href={p.href}>{p.label}</a>)}
     </div>
   </div>
 </footer>
