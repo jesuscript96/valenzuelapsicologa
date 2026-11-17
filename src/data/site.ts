@@ -5,15 +5,15 @@ export const DRAFT = false;
 export const SITE_NAME = 'María Valenzuela Psicología';
 
 // Holder data for the legal notice. Lines whose value is empty are not shown;
-// fill fullName, nif and address as soon as María sends them (LSSI art. 10).
+// address is still missing (LSSI art. 10); it is not shown on the site as a practice address.
 export const LEGAL = {
   name: 'María Valenzuela',
-  fullName: '',
-  nif: '',
+  fullName: 'María Valenzuela Chuliá',
+  nif: '53760790S',
   address: '',
   college: 'Colegio Oficial de la Psicología de la Comunitat Valenciana (COPCV)',
   collegeNumber: 'CV19927',
-  degrees: 'Titulación universitaria en Psicología y Máster general sanitario',
+  degrees: 'Titulación universitaria en Psicología y Máster en Psicología General Sanitaria',
   updated: '17 de noviembre de 2026',
 };
 

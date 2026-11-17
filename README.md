@@ -33,7 +33,7 @@ Las fuentes (Newsreader y Hanken Grotesk) se sirven desde la propia web mediante
 
 La web está publicada en https://www.valenzuelapsicologa.com y abierta a los buscadores (`DRAFT = false` en `src/data/site.ts`; `robots.txt` enlaza `/sitemap.xml`). Con `DRAFT = true` vuelve a pedir que no se indexe (`noindex` y `robots.txt`) y publica la lista `/pendientes`.
 
-Los datos del aviso legal están en `LEGAL`, en `src/data/site.ts`. Las líneas vacías (nombre completo, NIF, domicilio) no se muestran hasta rellenarlas.
+Los datos del aviso legal están en `LEGAL`, en `src/data/site.ts`. Las líneas vacías (ahora solo el domicilio) no se muestran hasta rellenarlas.
 
 ## Contacto
 
