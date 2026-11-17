@@ -14,7 +14,9 @@ interface Props {
 }
 const { page, title, description } = Astro.props;
 const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
-const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+// The build writes /sobre-mi.html, but Vercel serves it as /sobre-mi (cleanUrls).
+const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/');
+const canonical = Astro.site ? new URL(cleanPath, Astro.site).href : undefined;
 ---
 <!doctype html>
 <html lang="es">
@@ -24,6 +26,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {DRAFT && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="google-site-verification" content="BcRhHjMjkRNNkGJDKqmiVJcKjjeRc-kHOBWmHkWDfac" />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
