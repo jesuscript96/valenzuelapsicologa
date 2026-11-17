@@ -88,7 +88,6 @@ h3{font-size:clamp(1.3rem,1.1rem + .7vw,1.65rem);font-weight:400;line-height:1.2
 .eyebrow--gap{margin-bottom:14px}
 
 /* pending-data marker */
-.pend{display:inline-block;border:1px dashed var(--pend-line);background:var(--pend-bg);color:var(--pend-fg);padding:.02em .6em;border-radius:3px;font-size:.88em;line-height:1.55;font-family:var(--font-body);font-style:normal;font-weight:500}
 
 /* contour art */
 .art{position:absolute;max-width:none;overflow:visible;pointer-events:none}
@@ -99,9 +98,6 @@ h3{font-size:clamp(1.3rem,1.1rem + .7vw,1.65rem);font-weight:400;line-height:1.2
 .art .dot{fill:var(--warm);stroke:none}
 
 /* top note + header */
-.top-note{background:var(--bg-alt);color:var(--ink-soft);font-size:.82rem;line-height:1.5;border-bottom:1px solid var(--line)}
-.top-note .wrap{padding-block:8px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
-.top-note a{color:var(--ink-soft);text-underline-offset:3px}
 .site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
 .brand{display:inline-flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none}

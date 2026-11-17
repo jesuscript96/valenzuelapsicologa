@@ -31,9 +31,7 @@ Las fuentes (Newsreader y Hanken Grotesk) se sirven desde la propia web mediante
 
 ## Modo borrador
 
-`DRAFT = true` en `src/data/site.ts` muestra el aviso de borrador, publica la lista `/pendientes` y pide a los buscadores que no indexen la web (`noindex` y `robots.txt`). Para publicar de verdad, ponlo a `false` y, cuando haya dominio, define `site` en `astro.config.mjs`.
-
-Los datos aún por confirmar se marcan en el código con `<span class="pend">…</span>`.
+`DRAFT = true` en `src/data/site.ts` publica la lista `/pendientes` (sin enlaces desde la web) y pide a los buscadores que no indexen la web (`noindex` y `robots.txt`). Para publicar de verdad, ponlo a `false` y, cuando haya dominio, define `site` en `astro.config.mjs`.
 
 ## Contacto
 

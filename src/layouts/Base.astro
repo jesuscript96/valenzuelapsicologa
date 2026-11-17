@@ -35,16 +35,6 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <meta name="generator" content={Astro.generator} />
   </head>
   <body data-page={page}>
-    {DRAFT && (
-      <div class="top-note">
-        <div class="wrap">
-          <span>Borrador para revisar con María.</span>
-          <span>Lo que aparece así <span class="pend">pendiente</span> falta por confirmar.</span>
-          <a href="/pendientes">Ver lista de pendientes</a>
-        </div>
-      </div>
-    )}
-
     <Header page={page} />
 
     <main>

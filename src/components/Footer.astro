@@ -1,6 +1,6 @@
 ---
 import BrandMark from './BrandMark.astro';
-import { ADDRESS, EMAIL, FOOTER_PAGES, WHATSAPP, whatsappUrl } from '../data/site';
+import { EMAIL, FOOTER_PAGES, WHATSAPP, whatsappUrl } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
@@ -22,18 +22,13 @@ const year = new Date().getFullYear();
         <ul>
           <li>WhatsApp <a href={whatsappUrl()} target="_blank" rel="noopener">{WHATSAPP.display}</a></li>
           <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
-          <li>{ADDRESS}</li>
         </ul>
       </div>
     </div>
     <p class="safety"><b>Este espacio no atiende urgencias.</b> Si estás en una situación de riesgo, llama al 112. Si estás pensando en hacerte daño, puedes llamar al 024, la línea de atención a la conducta suicida, gratuita y disponible las 24 horas.</p>
     <div class="legal">
       <span>© {year} María Valenzuela</span>
-      {/* Legal pages are still to be written; they point to the review list until then. */}
-      <a href="/pendientes">Aviso legal</a>
-      <a href="/pendientes">Privacidad</a>
-      <a href="/pendientes">Cookies</a>
-      <span class="pend">Nombre comercial pendiente</span>
+      {/* Aviso legal, privacidad y cookies go here once they are written (see /pendientes). */}
     </div>
   </div>
 </footer>
