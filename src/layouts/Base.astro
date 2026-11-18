@@ -5,22 +5,58 @@ import '@fontsource-variable/hanken-grotesk/wght.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { DRAFT, SITE_NAME } from '../data/site';
+import { DRAFT, EMAIL, LEGAL, SITE_NAME, WHATSAPP } from '../data/site';
 
 interface Props {
   page: string;
+  /** Short page name; the tab title becomes «title · SITE_NAME». */
   title?: string;
+  /** Full title for search results, used as is instead of title. */
+  seoTitle?: string;
   description: string;
   /** Keep this page out of search results (e.g. the 404). */
   noindex?: boolean;
 }
-const { page, title, description, noindex = false } = Astro.props;
-const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
+const { page, title, seoTitle, description, noindex = false } = Astro.props;
+const fullTitle = seoTitle ?? (title ? `${title} · ${SITE_NAME}` : SITE_NAME);
 // The build writes /sobre-mi.html, but Vercel serves it as /sobre-mi (cleanUrls).
 const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/');
 const canonical = Astro.site ? new URL(cleanPath, Astro.site).href : undefined;
 // Preview image for shared links: public/compartir.jpg, a landscape crop of María's portrait.
 const shareUrl = Astro.site ? new URL('/compartir.jpg', Astro.site).href : '/compartir.jpg';
+
+// Structured data for the home page. Only verifiable facts: no address (not published), no reviews.
+const home = Astro.site?.href ?? '/';
+const jsonLd = page === 'inicio' && {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${home}#web`, url: home, name: SITE_NAME, inLanguage: 'es-ES', publisher: { '@id': `${home}#maria` } },
+    {
+      '@type': 'Person',
+      '@id': `${home}#maria`,
+      name: LEGAL.name,
+      jobTitle: 'Psicóloga general sanitaria',
+      url: new URL('/sobre-mi', home).href,
+      image: shareUrl,
+      email: `mailto:${EMAIL}`,
+      knowsAbout: ['Psicoterapia integradora', 'EMDR', 'Psicología y salud física'],
+      hasCredential: { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Máster en Psicología General Sanitaria' },
+      memberOf: { '@type': 'Organization', name: LEGAL.college },
+    },
+    {
+      '@type': 'MedicalBusiness',
+      '@id': `${home}#consulta`,
+      name: SITE_NAME,
+      url: home,
+      image: shareUrl,
+      email: `mailto:${EMAIL}`,
+      telephone: `+${WHATSAPP.number}`,
+      areaServed: { '@type': 'City', name: 'Valencia' },
+      founder: { '@id': `${home}#maria` },
+      priceRange: '65 €',
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="es">
@@ -29,7 +65,7 @@ const shareUrl = Astro.site ? new URL('/compartir.jpg', Astro.site).href : '/com
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    {(DRAFT || noindex) && <meta name="robots" content="noindex, nofollow" />}
+    {DRAFT ? <meta name="robots" content="noindex, nofollow" /> : noindex && <meta name="robots" content="noindex" />}
     <meta name="google-site-verification" content="BcRhHjMjkRNNkGJDKqmiVJcKjjeRc-kHOBWmHkWDfac" />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
@@ -47,6 +83,7 @@ const shareUrl = Astro.site ? new URL('/compartir.jpg', Astro.site).href : '/com
     <meta name="theme-color" content="#0D1A1D" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body data-page={page}>
     <Header page={page} />

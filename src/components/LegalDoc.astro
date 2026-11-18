@@ -11,7 +11,7 @@ interface Props {
 }
 const { page, title, description, seed } = Astro.props;
 ---
-<Base page={page} title={title} description={description}>
+<Base page={page} title={title} description={description} noindex>
   <PageHero
     eyebrow="Información legal"
     title={title}

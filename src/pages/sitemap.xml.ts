@@ -1,8 +1,8 @@
 import type { APIRoute } from 'astro';
-import { FOOTER_PAGES, LEGAL_PAGES } from '../data/site';
+import { FOOTER_PAGES } from '../data/site';
 
-// Every public page; FOOTER_PAGES already lists the main ones, including /contacto.
-const PATHS = [...FOOTER_PAGES, ...LEGAL_PAGES].map((p) => p.href);
+// The indexable pages (FOOTER_PAGES includes /contacto). Legal pages are noindex and stay out.
+const PATHS = FOOTER_PAGES.map((p) => p.href);
 
 export const GET: APIRoute = ({ site }) => {
   const urls = PATHS.map((path) => `  <url><loc>${new URL(path, site).href}</loc></url>`).join('\n');
